@@ -8,6 +8,23 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bgColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(207, 200, 200);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(122, 119, 119);
+}
+
 :root {
   --bgColor: rgb(13, 13, 13);
   --MainRed: #ff0000;
