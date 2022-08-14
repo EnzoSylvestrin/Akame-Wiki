@@ -62,6 +62,7 @@ export const SearchInput = styled(motion.input)`
     font-size: 17px;
     color: var(--textColor);
     padding: 5px;
+    padding-left: 60px;
     outline: none;
     background-color: var(--bgColor);
     border: 1px solid #868484;
@@ -70,9 +71,10 @@ export const SearchInput = styled(motion.input)`
     text-align: center;
     transition: all 0.5s ease;
 
-    :focus {
-        border-color: var(--mainRed) !important;
+    @media (max-width: 500px) {
+        padding-left: 5px;
     }
+
 `
 
 export const SearchIcon = styled(motion.div)`

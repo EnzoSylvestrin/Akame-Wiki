@@ -18,12 +18,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(207, 200, 200);
+  background: var(--bgInverse);
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(122, 119, 119);
+  background: var(--placeHolderColor);
 }
 
 ::-webkit-input-placeholder {
@@ -48,4 +48,5 @@
   --mainRed: #ff0000;
   --textColor: #fff;
   --placeHolderColor: #c9c2c2;
+  --bgCards: rgb(168, 51, 51);
 }
