@@ -3,87 +3,90 @@ import styled from 'styled-components'
 
 export const Nav = styled(motion.nav)`
     width: 100%;
-    height: 10vh;
-    background-color: var(--bgColor);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-
-    @media (max-width: 520px) {
-        padding-top: 5px;
-        height: 90px;
-    }
+    flex-wrap: wrap;
+    justify-content: space-between;
 `
 
-export const Logo = styled(motion.a)`
-    color: #fff;
+export const Logo = styled(motion.h1)`
+    color: var(--textColor);
     transition: all 0.6s;
     font-weight: bold;
-    text-decoration: none;
     text-transform: uppercase;
-    font-size: 24px;
-    letter-spacing: 4px;
+    font-size: 34px;
+    letter-spacing: 2px;
+    text-align: center;
 
     :hover {
         color: var(--MainRed);
     }
+`
 
-    @media (max-width: 520px) {
-        text-align: center;
-        width: 100%;
-    }
+export const ThemeDiv = styled(motion.div)`
+    cursor: pointer;
+`
+
+export const Theme = styled(motion.i)`
+    color: var(--textColor);
+    font-size: 30px;
+    margin-right: 15px;
+    cursor: pointer;
 `
 
 export const Label = styled(motion.label)`
-    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
     text-align: center;
-    
-    ::before {
-        display: inline-block;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        transition: all 0.5s ease;
-        background-color: #2c2a2a;
-        height: 33px;
-        width: 40px;
-        font: var(--fa-font-solid);
-        content: '\f002';
-        position: absolute;
-        border: 1px solid #868484;
-        right: 0;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
 
-    :hover:before {
-        border-color: #fff;
+    :hover input, 
+    :hover div {
+        border-color: var(--bgInverse);
     }
-
 `
 
 export const SearchInput = styled(motion.input)`
-    width: 300px;
-    height: 35px;
+    height: 50px;
+    width: 100%;    
     font-size: 17px;
-    color: #fff;
+    color: var(--textColor);
     padding: 5px;
-    padding-right: 45px;
     outline: none;
     background-color: var(--bgColor);
     border: 1px solid #868484;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    text-align: center;
     transition: all 0.5s ease;
 
-    :hover {
-        border-color: #fff;
-    }
-
     :focus {
-        border-color: var(--MainRed);
+        border-color: var(--MainRed) !important;
+    }
+`
+
+export const SearchIcon = styled(motion.div)`
+    width: 60px;
+    height: 50px;
+    transition: all 0.5s ease;
+    background-color: var(--bgColor);
+    border: 1px solid #868484;
+    border-left: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .icon {
+        font-size: 20px;
+        color: var(--textColor);
     }
 
-    @media (max-width: 520px) {
-        margin-bottom: 8px;
+    @media (max-width: 768px) {
+        
     }
 `

@@ -6,6 +6,7 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -26,6 +27,8 @@
 }
 
 :root {
-  --bgColor: rgb(13, 13, 13);
+  --bgColor: #2b2828;
+  --bgInverse: #f5eeee;
   --MainRed: #ff0000;
+  --textColor: #fff;
 }
