@@ -19,19 +19,22 @@ export const Logo = styled(motion.h1)`
     text-align: center;
 
     :hover {
-        color: var(--MainRed);
+        color: var(--mainRed);
+    }
+
+    @media (max-width: 350px) {
+        width: 100%;
     }
 `
 
 export const ThemeDiv = styled(motion.div)`
-    cursor: pointer;
-`
+    margin-right: 12.5px;
 
-export const Theme = styled(motion.i)`
-    color: var(--textColor);
-    font-size: 30px;
-    margin-right: 15px;
-    cursor: pointer;
+    @media (max-width: 350px) {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
 `
 
 export const Label = styled(motion.label)`
@@ -46,6 +49,11 @@ export const Label = styled(motion.label)`
     :hover div {
         border-color: var(--bgInverse);
     }
+    
+    @media (max-width: 350px) {
+        margin-top: 5px;
+    }
+
 `
 
 export const SearchInput = styled(motion.input)`
@@ -63,7 +71,7 @@ export const SearchInput = styled(motion.input)`
     transition: all 0.5s ease;
 
     :focus {
-        border-color: var(--MainRed) !important;
+        border-color: var(--mainRed) !important;
     }
 `
 
@@ -84,9 +92,5 @@ export const SearchIcon = styled(motion.div)`
     .icon {
         font-size: 20px;
         color: var(--textColor);
-    }
-
-    @media (max-width: 768px) {
-        
     }
 `

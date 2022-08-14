@@ -26,9 +26,26 @@
   background: rgb(122, 119, 119);
 }
 
+::-webkit-input-placeholder {
+  color: var(--placeHolderColor);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: var(--placeHolderColor);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: var(--placeHolderColor);  
+}
+
+:-ms-input-placeholder {  
+  color: var(--placeHolderColor);  
+}
+
 :root {
   --bgColor: #2b2828;
   --bgInverse: #f5eeee;
-  --MainRed: #ff0000;
+  --mainRed: #ff0000;
   --textColor: #fff;
+  --placeHolderColor: #c9c2c2;
 }

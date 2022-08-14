@@ -12,6 +12,6 @@ export const HomeContainer = styled(motion.section)`
     background-size: cover;
 
     @media (max-width: 500px) {
-        padding: 2rem 1.5rem;        
+        padding: 2rem 10px;        
     }
 `
