@@ -57,7 +57,7 @@ export const ErrorComponent = styled(motion.p)`
     }
 
     a {
-        color: blue; 
+        color: #10c9d6; 
         text-decoration: none;
     }
 `

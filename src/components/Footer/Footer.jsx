@@ -12,7 +12,7 @@ export default function Footer() {
                 </a>
             </div>
             <div className="copyright">
-                <p>Feito por Enzo Sylvestrin</p>
+                <p>Feito por <a href="https://enzosylvestrin.github.io/portifolio/" rel="noopener noreferrer" target="_blank">Enzo Sylvestrin</a></p>
             </div>
         </ContainerFooter>
     );

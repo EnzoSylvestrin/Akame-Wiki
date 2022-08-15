@@ -39,10 +39,16 @@ export const ContainerFooter = styled(motion.footer)`
     .copyright {
         color: #fff;
         font-size: 17px;
-        transition: all 0.4s ease-out;
+        transition: all 0.4s ease;
+
+        a {
+            color: #10c9d6;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
 
         :hover {
-            color: red;
+            transform: scale(1.1);
         }
     }
 

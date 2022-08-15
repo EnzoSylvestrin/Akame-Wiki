@@ -42,10 +42,9 @@ export default function Home() {
             }
             setItens(ItensHtml);
         }).catch((err) => {
-            console.log(err);
             setError(err.message);
         });
-    }, [])
+    }, []);
 
     return (
         <>

@@ -12,14 +12,13 @@ import Api from '../../Api';
 export default function App(props){
 
     const [searchItens, setSearchItens] = useState([]);
-    const [error, setError] = useState(props.error);
+    const [error, setError] = useState("");
     const [NenhumItemEncontrado, setNenhumItemEncontrado] = useState(false);
 
     var ItensHtml = [];
 
-
     function HandleSearch(target) {
-        if (props.error === "") {
+        if (error === "") {
             if (target.value !== "") {
                 Api.get(`/search/${target.value}`).then((response) => {
                     response = response.data;
@@ -64,20 +63,30 @@ export default function App(props){
     }
 
     const Notify = () => {
-        console.log('clicou')
-        toast.dark("Digite na barra de pesquisa para pesquisar.", {
-            position: 'bottom-left',
-            autoClose: 2000,
-            closeOnClick: true,
-            pauseOnHover: false,
-            toastId: "id-toast"
-        })
+        if (!error && !props.error) {
+            toast.dark("Digite na barra de pesquisa para pesquisar.", {
+                position: 'bottom-left',
+                autoClose: 2000,
+                closeOnClick: true,
+                pauseOnHover: false,
+                toastId: "id-toast"
+            })
+        }
+        else {
+            toast.dark("Resolva o erro para pesquisar.", {
+                position: 'bottom-left',
+                autoClose: 2000,
+                closeOnClick: true,
+                pauseOnHover: false,
+                toastId: "id-toast"
+            })
+        }
     };
 
     return (
         <>
             <Label>
-                <SearchInput type="text" maxLength={30} placeholder='Procure pelo seu personagem favorito...' onChange={e => HandleSearch(e.target)} disabled={error !== ""}/>
+                <SearchInput type="text" maxLength={30} placeholder='Procure pelo seu personagem favorito...' onChange={e => HandleSearch(e.target)} disabled={props.error !== "" || error !== ""}/>
                 <SearchIcon onClick={Notify}><MagnifyingGlass size={26} className="icon-search"/></SearchIcon>
             </Label>
             <Container>
@@ -86,12 +95,12 @@ export default function App(props){
                         ?
                         <LoadingContainer>
                             {
-                                error === "" 
+                                props.error === "" && error === ""
                                     ? 
                                     <LoadingComponent />
                                     : 
                                     <ErrorComponent>
-                                        Ocorreu um erro: {error} <br />
+                                        Ocorreu um erro: {props.error || error} <br />
                                         Para que consiga ver os personagens precisa estar com o servidor da API aberto <a href="/">clique aqui</a> para ver
                                     </ErrorComponent>
                             }  
