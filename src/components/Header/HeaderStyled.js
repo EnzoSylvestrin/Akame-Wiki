@@ -64,7 +64,7 @@ export const SearchInput = styled(motion.input)`
     padding: 5px;
     padding-left: 60px;
     outline: none;
-    background-color: var(--bgColor);
+    background-color: transparent;
     border: 1px solid #868484;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
@@ -81,7 +81,7 @@ export const SearchIcon = styled(motion.div)`
     width: 60px;
     height: 50px;
     transition: all 0.5s ease;
-    background-color: var(--bgColor);
+    background-color: transparent;
     border: 1px solid #868484;
     border-left: 0px;
     border-top-right-radius: 5px;

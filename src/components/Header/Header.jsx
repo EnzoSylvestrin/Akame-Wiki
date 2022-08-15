@@ -14,14 +14,12 @@ export default function Header() {
             BodyStyle.setProperty('--bgInverse', '#b3adad');
             BodyStyle.setProperty('--textColor', '#fff');
             BodyStyle.setProperty('--placeHolderColor', '#c9c2c2');
-            //BodyStyle.setProperty('--bgColorLight', 'rgb(51, 47, 47)');
         }
         else {
             BodyStyle.setProperty('--bgColor', '#f5eeee');
             BodyStyle.setProperty('--bgInverse', '#2b2828');
             BodyStyle.setProperty('--textColor', '#000');
             BodyStyle.setProperty('--placeHolderColor', '#474247');
-            //BodyStyle.setProperty('--bgColorLight', '#ccc');
         }
         setDarkTheme(theme => !theme);
     }

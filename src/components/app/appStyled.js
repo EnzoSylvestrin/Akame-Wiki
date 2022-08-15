@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
     width: 100%;
-    min-height: 70vh;
     height: 100%;
-    background-color: var(--bgColor);
 `
 
 export const GridContainer = styled(motion.div)`
+    height: 100%;
     display: grid;
     grid-template-columns: 49% 49%;
     gap: 2%;
+    overflow: hidden;
     margin-top: 10px;
 
     .mg-r {
@@ -21,11 +21,29 @@ export const GridContainer = styled(motion.div)`
     @media (max-width: 780px) {
         grid-template-columns: 100%;
         gap: 0;
+
+        .mg-r {
+        }
+    }
+`
+
+export const LoadingComponent = styled(motion.div)`
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+        color: var(--textColor);
+        font-size: 30px;        
     }
 `
 
 export const SingleItem = styled(motion.a)`
     width: 100%;
+    height: 100%;
     overflow: hidden;
     padding: 20px;
     margin: 5px;
