@@ -62,6 +62,19 @@ export const ErrorComponent = styled(motion.p)`
     }
 `
 
+export const NothingFindComponent = styled(motion.div)`
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: var(--textColor);
+        font-size: 20px;
+    }
+`
+
 export const SingleItem = styled(motion.a)`
     width: 100%;
     height: 100%;

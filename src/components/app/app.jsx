@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Label, SearchIcon, SearchInput } from '../Header/HeaderStyled';
-import { Container, ErrorComponent, GridContainer, LoadingComponent, LoadingContainer, SingleItem } from './appStyled';
+import { Container, ErrorComponent, GridContainer, LoadingComponent, LoadingContainer, NothingFindComponent, SingleItem } from './appStyled';
 
 import { MagnifyingGlass } from 'phosphor-react'
 
@@ -13,8 +13,10 @@ export default function App(props){
 
     const [searchItens, setSearchItens] = useState([]);
     const [error, setError] = useState(props.error);
+    const [NenhumItemEncontrado, setNenhumItemEncontrado] = useState(false);
 
     var ItensHtml = [];
+
 
     function HandleSearch(target) {
         if (props.error === "") {
@@ -22,7 +24,11 @@ export default function App(props){
                 Api.get(`/search/${target.value}`).then((response) => {
                     response = response.data;
                     if (response.length === 0) {
-
+                        setNenhumItemEncontrado(true);
+                        return;
+                    }
+                    else {
+                        setNenhumItemEncontrado(false);
                     }
                     for(let i = 0; i < response.length; i++) {
                         ItensHtml.push(
@@ -77,28 +83,35 @@ export default function App(props){
             <Container>
                 {
                     props.Itens.length === 0 || error !== ""
-                    ?
-                    <LoadingContainer>
-                        {error === "" 
-                            ? 
-                            <LoadingComponent />
-                            : 
-                            <ErrorComponent>
-                                Ocorreu um erro: {error} <br />
-                                Para que consiga ver os personagens precisa estar com o servidor da API aberto <a href="/">clique aqui</a> para ver
-                            </ErrorComponent>
-                        }  
-                    </LoadingContainer>
-                    :
-                    <GridContainer>
-                        {
-                            searchItens.length === 0
+                        ?
+                        <LoadingContainer>
+                            {
+                                error === "" 
+                                    ? 
+                                    <LoadingComponent />
+                                    : 
+                                    <ErrorComponent>
+                                        Ocorreu um erro: {error} <br />
+                                        Para que consiga ver os personagens precisa estar com o servidor da API aberto <a href="/">clique aqui</a> para ver
+                                    </ErrorComponent>
+                            }  
+                        </LoadingContainer>
+                        :
+                        !NenhumItemEncontrado 
                             ?
-                            props.Itens
+                            <GridContainer>
+                                {
+                                    searchItens.length === 0
+                                    ?
+                                    props.Itens
+                                    :
+                                    searchItens
+                                } 
+                            </GridContainer>
                             :
-                            searchItens
-                        } 
-                    </GridContainer> 
+                            <NothingFindComponent>
+                                <p>Nenhum personagem encontrado! 😿</p>
+                            </NothingFindComponent>
                 }
             </Container>
         </>
