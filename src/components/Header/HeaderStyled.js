@@ -91,7 +91,7 @@ export const SearchIcon = styled(motion.div)`
     justify-content: center;
     cursor: pointer;
 
-    .icon {
+    .icon-search {
         font-size: 20px;
         color: var(--textColor);
     }

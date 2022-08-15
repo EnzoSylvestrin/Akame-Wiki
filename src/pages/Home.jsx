@@ -9,7 +9,6 @@ import { SingleItem } from '../components/app/appStyled';
 
 import api from "../Api";
 
-
 export default function Home() {
 
     const [error, setError] = useState("");
@@ -51,7 +50,7 @@ export default function Home() {
     return (
         <>
             <HomeContainer >
-                <Header error={error} />
+                <Header />
                 <App Itens={Itens} error={error} />
             </HomeContainer>
             <Footer />

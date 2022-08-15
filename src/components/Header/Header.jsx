@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import { Logo, Nav, SearchInput, Label, SearchIcon, ThemeDiv } from './HeaderStyled.js';
-import { Sun, Moon, MagnifyingGlass } from 'phosphor-react';
 
-export default function Header(props) {
+import { Logo, Nav, ThemeDiv } from './HeaderStyled.js';
+
+import { Sun, Moon } from 'phosphor-react';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+export default function Header() {
 
     const [DarkTheme, setDarkTheme] = useState(true);
 
@@ -22,14 +28,20 @@ export default function Header(props) {
             BodyStyle.setProperty('--placeHolderColor', '#474247');
         }
         setDarkTheme(theme => !theme);
-    }
 
-    function HandleSearch() {
-        
+        toast("Tema alterado!", {
+            position: 'bottom-left',
+            autoClose: 2000,
+            pauseOnHover: false,
+            closeOnClick: true,
+            toastId: 'id-toast-theme',
+            theme: DarkTheme ? 'dark' : 'light'
+        });
     }
     
     return (
         <header>
+            <ToastContainer />
             <Nav>
                 <Logo>Akame Wiki</Logo>
                     <ThemeDiv>
@@ -38,10 +50,6 @@ export default function Header(props) {
                             : <Moon size={32} style={{cursor: "pointer"}} onClick={HandleSwitchTheme}/>
                         }
                     </ThemeDiv>
-                <Label>
-                    <SearchInput type="text" maxLength={30} placeholder='Procure pelo seu personagem favorito...' onChange={HandleSearch} disabled={props.error !== ""}/>
-                    <SearchIcon className="icon-search"><MagnifyingGlass size={26} style={{color: DarkTheme ? '#fff' : '#000'}}/></SearchIcon>
-                </Label>
             </Nav>
         </header>
     );

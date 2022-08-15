@@ -5,7 +5,8 @@ export const ContainerFooter = styled(motion.footer)`
     padding: 5px 0;
     overflow-y: hidden;
     width: 100%;
-    min-height: 12vh;
+    min-height: 80px;
+    height: 12vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
