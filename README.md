@@ -14,7 +14,7 @@ Esse é um site simples criado para consumir a API de Akame ga kill que criei, f
 
 Antes de começar, verifique se você atendeu ao seguinte requisito:
 * Você instalou a versão mais recente do Node.js
-* Você iniciou o servidor da API (!clique aqui(https://github.com/EnzoSylvestrin/Akame-API) para ver mais)
+* Você iniciou o servidor da API ([clique aqui](https://github.com/EnzoSylvestrin/Akame-API) para ver mais)
 
 ## ☕ Usando o Projeto
 
