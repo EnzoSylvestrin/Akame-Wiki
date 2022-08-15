@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Logo, Nav, SearchInput, Label, SearchIcon, ThemeDiv } from './HeaderStyled.js';
 import { Sun, Moon, MagnifyingGlass } from 'phosphor-react';
 
-export default function Header() {
+export default function Header(props) {
 
     const [DarkTheme, setDarkTheme] = useState(true);
 
@@ -23,6 +23,10 @@ export default function Header() {
         }
         setDarkTheme(theme => !theme);
     }
+
+    function HandleSearch() {
+        
+    }
     
     return (
         <header>
@@ -35,7 +39,7 @@ export default function Header() {
                         }
                     </ThemeDiv>
                 <Label>
-                    <SearchInput type="text" maxLength={30} placeholder='Procure pelo seu personagem favorito...'/>
+                    <SearchInput type="text" maxLength={30} placeholder='Procure pelo seu personagem favorito...' onChange={HandleSearch} disabled={props.error !== ""}/>
                     <SearchIcon className="icon-search"><MagnifyingGlass size={26} style={{color: DarkTheme ? '#fff' : '#000'}}/></SearchIcon>
                 </Label>
             </Nav>

@@ -24,17 +24,41 @@ export const GridContainer = styled(motion.div)`
     }
 `
 
-export const LoadingComponent = styled(motion.div)`
+export const LoadingContainer = styled(motion.div)`
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+`
+
+export const LoadingComponent = styled(motion.div)`
+    animation: is-rotating 1s infinite;
+    border: 6px solid var(--bgInverse);
+    border-radius: 50%;
+    border-top-color: #3adfe7;
+    height: 50px;
+    width: 50px;
+
+    @keyframes is-rotating {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+`
+
+export const ErrorComponent = styled(motion.p)`
+    color: var(--textColor);
+    font-size: 20px;
     text-align: center;
 
-    p {
-        color: var(--textColor);
-        font-size: 30px;        
+    span {
+        color: var(--mainRed);
+    }
+
+    a {
+        color: blue; 
+        text-decoration: none;
     }
 `
 

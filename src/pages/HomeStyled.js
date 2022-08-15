@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HomeContainer = styled(motion.section)`
     width: 100%;
-    min-height: 100vh;
+    min-height: 88vh;
     height: 100%;
     background-color: var(--bgColor);
     padding: 2rem 3rem;
