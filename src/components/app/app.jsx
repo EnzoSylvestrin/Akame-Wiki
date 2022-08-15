@@ -4,6 +4,7 @@ import api from "../../Api";
 
 export default function App(){
 
+    const [error, setError] = useState("");
     const [Itens, setItens] = useState([]);
 
     useEffect(() => {
@@ -11,12 +12,12 @@ export default function App(){
 
         api.get().then((response) => {
             response = response.data;
-            for(let i = 0; i < 12; i++) {
+            for(let i = 0; i < response.length; i++) {
                 ItensHtml.push(
                     <SingleItem
                         key={i}
                         className={(i + 1) % 2 === 1 ? 'mg-r' : ''} 
-                        initial={{ opacity: 0, scale: 0.4 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }} //onScroll
                         transition={{ duration: 0.2 }}
                         href="/"
@@ -24,25 +25,28 @@ export default function App(){
                         <div className="text-wrapper">
                             <h1>{`#${i + 1}`}</h1>
                             <h2>{`${response[i].nome}`}</h2>
-                            <p>{`idade: ${response[i].idade}`}</p>
+                            <p>{`idade: ${response[i].idade === -1 ? 'desconhecido' : response[i].idade}`}</p>
                         </div>
                         <div className="img-wrapper">
                             <img src={response[i].imagem} alt="imagem do personagem"/>
                         </div>
                     </SingleItem>
-                ) 
+                )
             }
             setItens(ItensHtml);
-        })
+        }).catch((err) => {
+            console.log(err);
+            setError(err.message);
+        });
     }, [])
 
     return (
         <Container>
             {
-                Itens !== [] 
+                Itens === [] 
                 ? 
                 <LoadingComponent>
-                    <p>Carregando...</p>
+                    <p>{error === "" ? "Carregando... " : `Ocorreu um erro: ${error}`}</p>
                 </LoadingComponent>
                 :
                 <GridContainer>

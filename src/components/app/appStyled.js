@@ -9,10 +9,10 @@ export const Container = styled(motion.div)`
 export const GridContainer = styled(motion.div)`
     height: 100%;
     display: grid;
-    grid-template-columns: 49% 49%;
-    gap: 2%;
+    grid-template-columns: repeat(2, 1fr);
     overflow: hidden;
     margin-top: 10px;
+    gap: 32px;
 
     .mg-r {
         margin-left: 0px !important;
@@ -20,10 +20,7 @@ export const GridContainer = styled(motion.div)`
 
     @media (max-width: 780px) {
         grid-template-columns: 100%;
-        gap: 0;
-
-        .mg-r {
-        }
+        gap: 40px;
     }
 `
 
@@ -44,9 +41,10 @@ export const LoadingComponent = styled(motion.div)`
 export const SingleItem = styled(motion.a)`
     width: 100%;
     height: 100%;
+    min-height: 200px;
     overflow: hidden;
     padding: 20px;
-    margin: 5px;
+    margin: 20px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
@@ -88,7 +86,7 @@ export const SingleItem = styled(motion.a)`
         justify-content: center;
 
         img {
-            filter: grayscale(50%);
+            filter: grayscale(80%);
             width: auto;
             height: 175px;
             border-radius: 50%;
@@ -108,6 +106,7 @@ export const SingleItem = styled(motion.a)`
 
     @media (max-width: 780px) {
         margin-bottom: 15px;
+        margin-left: 0px !important;
     }
     
     @media (max-width: 385px) {
@@ -120,7 +119,8 @@ export const SingleItem = styled(motion.a)`
 
             h1 {
                 padding: 0;
-                margin: 5px 0;
+                margin-top: 10px;
+                margin-bottom: 5px;
             }
 
             h2 {
