@@ -11,16 +11,107 @@ export const GridContainer = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     overflow: hidden;
-    margin-top: 10px;
-    gap: 32px;
-
-    .mg-r {
-        margin-left: 0px !important;
-    }
-
-    @media (max-width: 780px) {
+    gap: 30px;
+    margin-top: 20px;
+    
+    @media (max-width: 820px) {
         grid-template-columns: 100%;
         gap: 40px;
+    }
+`
+
+export const SingleItem = styled(motion.a)`
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    background-color: var(--bgCards);
+
+    .text-wrapper {
+        overflow: hidden !important;
+        display: block;
+        width: 70%;
+        color: #fff;
+
+        h1 {
+            padding: 5px;
+            font-size: 20px;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            letter-spacing: 1.5px;
+        }
+    }
+    
+    .img-wrapper {
+        width: 100%;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+
+        img {
+            filter: grayscale(80%);
+            width: auto;
+            height: 175px;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+    }
+
+    :hover {
+        border-radius: 20px;
+    }
+
+    :hover img {
+        filter: grayscale(0%);
+        border-radius: 10px;
+    }
+
+    @media (max-width: 871px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 820px) {
+        margin-bottom: 15px;
+        margin-left: 0px !important;
+    }
+    
+    @media (max-width: 385px) {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+
+        .text-wrapper {
+            width: 100%;
+            text-align: center;
+
+            h1 {
+                padding: 0;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            h2 {
+                margin: 8px 0;
+            }
+        }
     }
 `
 
@@ -75,94 +166,3 @@ export const NothingFindComponent = styled(motion.div)`
     }
 `
 
-export const SingleItem = styled(motion.a)`
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    overflow: hidden;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    transition: all 0.5s ease;
-    text-decoration: none;
-    background-color: var(--bgCards);
-
-
-    .text-wrapper {
-        overflow: hidden !important;
-        display: block;
-        width: 70%;
-        color: #fff;
-
-        h1 {
-            padding: 5px;
-            font-size: 20px;
-            font-weight: lighter;
-            letter-spacing: 2px;
-        }
-
-        h2 {
-            margin-top: 15px;
-            margin-bottom: 15px;
-            font-size: 30px;
-        }
-
-        p {
-            font-size: 20px;
-            letter-spacing: 1.5px;
-        }
-    }
-    
-    .img-wrapper {
-        width: 100%;
-        align-self: center;
-        display: flex;
-        justify-content: center;
-
-        img {
-            filter: grayscale(80%);
-            width: auto;
-            height: 175px;
-            border-radius: 50%;
-            transition: all 0.5s ease;
-        }
-
-    }
-
-    :hover {
-        border-radius: 12px;
-    }
-
-    :hover img {
-        filter: grayscale(0%);
-        border-radius: 10px;
-    }
-
-    @media (max-width: 780px) {
-        margin-bottom: 15px;
-        margin-left: 0px !important;
-    }
-    
-    @media (max-width: 385px) {
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-
-        .text-wrapper {
-            width: 100%;
-            text-align: center;
-
-            h1 {
-                padding: 0;
-                margin-top: 10px;
-                margin-bottom: 5px;
-            }
-
-            h2 {
-                margin: 8px 0;
-            }
-        }
-    }
-`
