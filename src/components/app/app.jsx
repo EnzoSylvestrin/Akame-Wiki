@@ -101,7 +101,7 @@ export default function App(props){
                                     : 
                                     <ErrorComponent>
                                         Ocorreu um erro: {props.error || error} <br />
-                                        Para que consiga ver os personagens precisa estar com o servidor da API aberto <a href="/">clique aqui</a> para ver
+                                        Para que consiga ver os personagens precisa estar com o servidor da API aberto <a href="https://github.com/EnzoSylvestrin/Akame-API" rel="noopener noreferrer" target="_blank">clique aqui</a> para ver
                                     </ErrorComponent>
                             }  
                         </LoadingContainer>
