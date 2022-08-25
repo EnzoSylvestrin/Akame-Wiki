@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/akamewiki/static/css/main.aa3d3faa.css",
-    "main.js": "/akamewiki/static/js/main.b0ad7d3d.js",
-    "index.html": "/akamewiki/index.html",
-    "main.aa3d3faa.css.map": "/akamewiki/static/css/main.aa3d3faa.css.map",
-    "main.b0ad7d3d.js.map": "/akamewiki/static/js/main.b0ad7d3d.js.map"
+    "main.css": "/Akame-Wiki/static/css/main.aa3d3faa.css",
+    "main.js": "/Akame-Wiki/static/js/main.e1cefe35.js",
+    "index.html": "/Akame-Wiki/index.html",
+    "main.aa3d3faa.css.map": "/Akame-Wiki/static/css/main.aa3d3faa.css.map",
+    "main.e1cefe35.js.map": "/Akame-Wiki/static/js/main.e1cefe35.js.map"
   },
   "entrypoints": [
     "static/css/main.aa3d3faa.css",
-    "static/js/main.b0ad7d3d.js"
+    "static/js/main.e1cefe35.js"
   ]
 }
