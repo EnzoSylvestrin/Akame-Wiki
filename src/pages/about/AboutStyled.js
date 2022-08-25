@@ -22,7 +22,7 @@ export const ContainerImg = styled.div`
 `
 
 export const ImgCharacter = styled(motion.img)`
-    width: 200px;
+    width: auto;
     height: 200px;
 `
 

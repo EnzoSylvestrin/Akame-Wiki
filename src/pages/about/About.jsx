@@ -58,7 +58,7 @@ export default function About() {
                         >
                             <h1>{Item.nome}</h1>
                             {
-                                Item.idade != -1
+                                Item.idade !== -1
                                 ?
                                 <p>Idade: {Item.idade}</p>
                                 :
@@ -78,10 +78,10 @@ export default function About() {
                         <Title>Características: </Title>
                         <Characteristic>
                             <p>Grupo:  {Item.grupo}</p>
-                            <span>gênero: {Item.genero}</span>
+                            <span>Gênero: {Item.genero}</span>
                             <h2>
                                 {
-                                    Item.armaImperial != null 
+                                    Item.armaImperial !== null 
                                     ?
                                     `Arma imperial: ${Item.armaImperial}` 
                                     :
