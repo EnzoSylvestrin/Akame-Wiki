@@ -21,7 +21,7 @@ export default function Home() {
             response = response.data;
             let slug = "";
             for(let i = 0; i < response.length; i++) {
-                slug = `/search/${response[i].nome}` 
+                slug = `/search?name=${response[i].nome}` 
                 ItensHtml.push(
                     <SingleItem
                         key={i}

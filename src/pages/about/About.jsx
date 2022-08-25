@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import Api from '../../Api';
 import { AboutContainer, ContainerImg, ContainerAbout, Description, ImgCharacter, Particulars, Characteristic, Title } from './AboutStyled';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { LoadingComponent } from '../../components/app/appStyled';
 
 export default function About() {
 
-    const {name} = useParams();
+    const location = useLocation();
+
+    let name = location.search.split('=')[1];
 
     const [Item, setItem] = useState(null);
 
