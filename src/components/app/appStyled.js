@@ -31,9 +31,9 @@ export const SingleItem = styled(motion.a)`
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
-    transition: all 0.5s ease;
     text-decoration: none;
     background-color: var(--bgCards);
+    transition: all 0.5s ease;
 
     .text-wrapper {
         overflow: hidden !important;

@@ -29,15 +29,17 @@ export default function App(props){
                     else {
                         setNenhumItemEncontrado(false);
                     }
+                    let slug = "";
                     for(let i = 0; i < response.length; i++) {
+                        slug = `/search/${response[i].nome}` 
                         ItensHtml.push(
                             <SingleItem
                                 key={i}
-                                className={(i + 1) % 2 === 1 ? 'mg-r' : ''} 
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }} //onScroll
+                                whileHover={{ scale: 0.98 }}
                                 transition={{ duration: 0.2 }}
-                                href="/"
+                                href={slug}
                             >
                                 <div className="text-wrapper">
                                     <h1>{`#${i + 1}`}</h1>
@@ -70,7 +72,7 @@ export default function App(props){
                 closeOnClick: true,
                 pauseOnHover: false,
                 toastId: "id-toast"
-            })
+            });
         }
         else {
             toast.dark("Resolva o erro para pesquisar.", {
@@ -79,7 +81,7 @@ export default function App(props){
                 closeOnClick: true,
                 pauseOnHover: false,
                 toastId: "id-toast"
-            })
+            });
         }
     };
 

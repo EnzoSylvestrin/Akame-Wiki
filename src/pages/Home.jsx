@@ -19,15 +19,17 @@ export default function Home() {
 
         api.get().then((response) => {
             response = response.data;
+            let slug = "";
             for(let i = 0; i < response.length; i++) {
+                slug = `/search/${response[i].nome}` 
                 ItensHtml.push(
                     <SingleItem
                         key={i}
-                        className={(i + 1) % 2 === 1 ? 'mg-r' : 'mg-p'} 
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }} //onScroll
+                        whileHover={{ scale: 0.98 }}
                         transition={{ duration: 0.2 }}
-                        href="/"
+                        href={slug}
                     >
                         <div className="text-wrapper">
                             <h1>{`#${i + 1}`}</h1>
