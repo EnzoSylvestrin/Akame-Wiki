@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/akamewiki/static/css/main.aa3d3faa.css",
+    "main.js": "/akamewiki/static/js/main.b0ad7d3d.js",
+    "index.html": "/akamewiki/index.html",
+    "main.aa3d3faa.css.map": "/akamewiki/static/css/main.aa3d3faa.css.map",
+    "main.b0ad7d3d.js.map": "/akamewiki/static/js/main.b0ad7d3d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa3d3faa.css",
+    "static/js/main.b0ad7d3d.js"
+  ]
+}
