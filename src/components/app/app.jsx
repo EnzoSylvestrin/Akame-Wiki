@@ -31,7 +31,7 @@ export default function App(props){
                     }
                     let slug = "";
                     for(let i = 0; i < response.length; i++) {
-                        slug = `/search?name=${response[i].nome}` 
+                        slug = `/Akame-Wiki/search/?name=${response[i].nome}` 
                         ItensHtml.push(
                             <SingleItem
                                 key={i}

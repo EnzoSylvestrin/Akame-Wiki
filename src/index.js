@@ -12,7 +12,7 @@ root.render(
     <BrowserRouter Basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/Akame-Wiki" element={<Home />} />
-        <Route path="/search" element={<About />} />
+        <Route path="/Akame-Wiki/search" element={<About />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
