@@ -83,7 +83,7 @@ export default function About() {
                             <span>Gênero: {Item.genero}</span>
                             <h2>
                                 {
-                                    Item.armaImperial !== null 
+                                    Item.armaImperial != null 
                                     ?
                                     `Arma imperial: ${Item.armaImperial}` 
                                     :

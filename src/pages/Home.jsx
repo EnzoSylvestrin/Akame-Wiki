@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 
 import { HomeContainer } from './HomeStyled';
-import { SingleItem } from '../components/app/appStyled';
+import { CreateItem } from '../utils/Commom';
 
 import api from "../Api";
 
@@ -19,27 +19,9 @@ export default function Home() {
 
         api.get().then((response) => {
             response = response.data;
-            let slug = "";
             for(let i = 0; i < response.length; i++) {
-                slug = `/Akame-Wiki/search/?name=${response[i].nome}` 
                 ItensHtml.push(
-                    <SingleItem
-                        key={i}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }} //onScroll
-                        whileHover={{ scale: 0.98 }}
-                        transition={{ duration: 0.2 }}
-                        href={slug}
-                    >
-                        <div className="text-wrapper">
-                            <h1>{`#${i + 1}`}</h1>
-                            <h2>{`${response[i].nome}`}</h2>
-                            <p>{`idade: ${response[i].idade === -1 ? 'desconhecida' : response[i].idade}`}</p>
-                        </div>
-                        <div className="img-wrapper">
-                            <img src={response[i].imagem} alt="imagem do personagem"/>
-                        </div>
-                    </SingleItem>
+                    CreateItem(response, i)
                 )
             }
             setItens(ItensHtml);

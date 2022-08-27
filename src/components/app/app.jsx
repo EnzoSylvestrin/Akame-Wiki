@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
 import { Label, SearchIcon, SearchInput } from '../Header/HeaderStyled';
-import { Container, ErrorComponent, GridContainer, LoadingComponent, LoadingContainer, NothingFindComponent, SingleItem } from './appStyled';
+import { Container, ErrorComponent, GridContainer, LoadingComponent, LoadingContainer, NothingFindComponent } from './appStyled';
 
 import { MagnifyingGlass } from 'phosphor-react'
 
 import { toast } from 'react-toastify';
 
 import Api from '../../Api';
+
+import {CreateItem} from '../../utils/Commom';
 
 export default function App(props){
 
@@ -29,27 +31,9 @@ export default function App(props){
                     else {
                         setNenhumItemEncontrado(false);
                     }
-                    let slug = "";
                     for(let i = 0; i < response.length; i++) {
-                        slug = `/Akame-Wiki/search/?name=${response[i].nome}` 
                         ItensHtml.push(
-                            <SingleItem
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }} //onScroll
-                                whileHover={{ scale: 0.98 }}
-                                transition={{ duration: 0.2 }}
-                                href={slug}
-                            >
-                                <div className="text-wrapper">
-                                    <h1>{`#${i + 1}`}</h1>
-                                    <h2>{`${response[i].nome}`}</h2>
-                                    <p>{`idade: ${response[i].idade === -1 ? 'desconhecida' : response[i].idade}`}</p>
-                                </div>
-                                <div className="img-wrapper">
-                                    <img src={response[i].imagem} alt="imagem do personagem"/>
-                                </div>
-                            </SingleItem>
+                            CreateItem(response, i)
                         )
                     }
                     setSearchItens(ItensHtml);

@@ -20,7 +20,7 @@ export const GridContainer = styled(motion.div)`
     }
 `
 
-export const SingleItem = styled(motion.a)`
+export const SingleItem = styled(motion.div)`
     width: 100%;
     height: 100%;
     min-height: 200px;
@@ -32,6 +32,8 @@ export const SingleItem = styled(motion.a)`
     justify-content: center;
     flex-wrap: nowrap;
     text-decoration: none;
+    overflow: hidden !important;
+    text-decoration: none;
     background-color: var(--bgCards);
     transition: all 0.5s ease;
 
@@ -40,6 +42,7 @@ export const SingleItem = styled(motion.a)`
         display: block;
         width: 70%;
         color: #fff;
+        text-decoration: none;
 
         h1 {
             padding: 5px;

@@ -50,3 +50,8 @@
   --placeHolderColor: #c9c2c2;
   --bgCards: rgb(120, 10, 223);
 }
+
+.link-styled {
+  overflow: hidden;
+  text-decoration: none;
+}
