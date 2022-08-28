@@ -6,16 +6,15 @@ import { Sun, Moon } from 'phosphor-react';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
 
 
 export default function Header() {
 
+    const BodyStyle = document.body.style;
+
     const [DarkTheme, setDarkTheme] = useState(true);
-
+    
     function HandleSwitchTheme() {
-        const BodyStyle = document.body.style;
-
         if (!DarkTheme) {
             BodyStyle.setProperty('--bgColor', '#2b2828');
             BodyStyle.setProperty('--bgInverse', '#b3adad');

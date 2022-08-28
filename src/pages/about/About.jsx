@@ -39,8 +39,6 @@ export default function About() {
 
     }, []);
 
-    console.log(Item);
-
     return (
         <section>
             {

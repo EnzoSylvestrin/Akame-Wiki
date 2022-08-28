@@ -27,7 +27,7 @@ export const ImgCharacter = styled(motion.img)`
 `
 
 export const Particulars = styled(motion.div)`
-    color: white;
+    color: var(--textColor);
     padding: 0 25px;
 
     h1 {
