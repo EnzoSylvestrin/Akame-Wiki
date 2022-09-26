@@ -70,7 +70,6 @@ export const SingleItem = styled(motion.div)`
         justify-content: center;
 
         img {
-            filter: grayscale(80%);
             width: auto;
             height: 175px;
             border-radius: 50%;
@@ -84,7 +83,6 @@ export const SingleItem = styled(motion.div)`
     }
 
     :hover img {
-        filter: grayscale(0%);
         border-radius: 10px;
     }
 
